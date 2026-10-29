@@ -58,6 +58,16 @@ T('question builders', () => {
   const tw = E.BY.weather; let hit = 0; for (let i = 0; i < 50; i++) if (E.choices(tw, rnd).includes('whether')) hit++; ok(hit > 25, 'sound-alike twin appears as a choice');
 });
 
+T('every challenge type is in play', () => {
+  const p = mkp(), seen = { 0: {}, 1: {}, 2: {}, 3: {}, fresh: {} }; const r = E.seeded(5);
+  for (const w of WORDS) { for (const b of [0, 1, 2, 3]) { p.words[w.i] = { b, r: 1, w: 0, t: 0, due: 0, d: [] }; const k = E.kindFor(p, w, r); seen[b][k.kind] = (seen[b][k.kind] || 0) + 1; }
+    const f = E.freshKind(w, r); seen.fresh[f.kind] = (seen.fresh[f.kind] || 0) + 1; }
+  ok(seen[1].scramble > 50 && seen[1].missing > 50 && seen[1].pick > 20, 'box 1 mixes scramble, missing, pick: ' + JSON.stringify(seen[1]));
+  ok(seen[0].scramble > 50 && seen[0].pick > 50, 'box 0 mixes scramble and pick');
+  ok(Object.keys(seen[2]).join() === 'type' && Object.keys(seen[3]).join() === 'type', 'boxes 2 and 3 are typed');
+  ok(seen.fresh.type > 100 && seen.fresh.missing > 100 && seen.fresh.scramble > 50, 'the quiz after a learn card mixes typing, gaps and scramble: ' + JSON.stringify(seen.fresh));
+  for (const w of WORDS) if (w.i.length < 4 || w.i.length > 9) { const f = E.freshKind(w, E.seeded(w.i.length)); ok(f.kind !== 'scramble', w.i + ' is too long/short to scramble'); }
+});
 T('spaced repetition: recognition never masters', () => {
   const p = mkp(); const w = 'friend';
   for (let i = 0; i < 12; i++) E.answer(p, { i: w, kind: 'pick', ok: true, tries: 1, combo: 1 }, at(i));

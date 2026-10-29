@@ -86,3 +86,8 @@ quests / ~40 achievements / Word Vault (mastered-word collection) / records.
   gap = missing letter; "lisent" for "listen" -> l i s green, gap, e n orange, t red (the old LCS display called
   e and n correct, which was misleading). (3) A new word is TYPED once on the learn card (only the right letter
   is accepted) and again on the next screen from memory; that quiz is `fresh` and does not count toward mastery.
+- 2026-10-29 (feedback round 2, Jacob): "Did you remove the scrambled letters option? I only see typing options."
+  Not removed, but making the post-learn quiz always typed (round 1) starved Scramble/Pick/Missing: new words
+  skip box 0, where scramble lived. Now `Engine.kindFor` mixes scramble/missing/pick at box 1 (typing only from
+  box 2 up, since only typed answers raise a word past 2) and `Engine.freshKind` mixes typed-with-slots,
+  fill-the-gaps and scramble for the quiz right after a learn card. Tested: 10 new words -> 5 missing, 2 scramble, 3 type.

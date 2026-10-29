@@ -96,14 +96,26 @@ const Engine = (() => {
   }
   const masteredCount = (p) => Object.values(p.words).filter(isMastered).length;
 
-  // How a word is asked, by how well she knows it.
+  // How a word is asked, by how well she knows it. Every type shows up on the way up the ladder; only a TYPED
+  // answer can lift a word past box 2, so the typed steps are where mastery is earned.
+  const canScramble = (w) => w.i.length >= 4 && w.i.length <= 9;
   function kindFor(p, w, rnd = Math.random) {
-    const r = p.words[w.i], b = r ? r.b : 0;
+    const r = p.words[w.i], b = r ? r.b : 0, x = rnd();
     if (b >= 3) return { kind: 'type', scaf: false };
     if (b === 2) return { kind: 'type', scaf: true };            // slots show how long it is
-    if (b === 1) return { kind: 'missing', scaf: false };
-    const n = w.i.length;
-    return { kind: (n >= 4 && n <= 9 && rnd() < .5) ? 'scramble' : 'pick', scaf: false };
+    if (b === 1) {                                               // mix it up: build it, fill the gaps, or spot it
+      if (canScramble(w) && x < .4) return { kind: 'scramble', scaf: false };
+      return x < .75 ? { kind: 'missing', scaf: false } : { kind: 'pick', scaf: false };
+    }
+    return { kind: (canScramble(w) && x < .5) ? 'scramble' : 'pick', scaf: false };
+  }
+  // The quiz on the screen right after the learn card (she has just typed the word while looking at it).
+  // It asks again, a different way each time: typed with slots, filling the gaps, or unscrambling.
+  function freshKind(w, rnd = Math.random) {
+    const x = rnd();
+    if (canScramble(w) && x < .3) return { kind: 'scramble', scaf: false };
+    if (x < .55) return { kind: 'missing', scaf: false };
+    return { kind: 'type', scaf: true };
   }
 
   // Wrong spellings for Pick-It: three of the stored ones, plus the sound-alike twin when there is one.
@@ -550,7 +562,7 @@ const Engine = (() => {
 
   return {
     dayNum, seeded, shuffle, blank, sanitize, bal, earn, spend, rec, isMastered, isKnown, isSeen, worldProgress, unlocked, focusWorld,
-    masteredCount, kindFor, choices, scramble, blanks, diff, same, dueWords, trickyWords, questRound, rematchRound, dailyRound, bossRound,
+    masteredCount, kindFor, freshKind, choices, scramble, blanks, diff, same, dueWords, trickyWords, questRound, rematchRound, dailyRound, bossRound,
     speedPool, placementWord, placementNext, placementResult, touchStreak, dayRec, ensureQuests, questState, claimQuest, calendarReady,
     claimCalendar, formFromBond, levelUpRewards, answer, roundDone, bossFought, speedDone, dailyDone, openCrate, buy, equipGear, gearFor,
     ACH, checkAch, merge, BY, BYWORLD, ALLYBY, HEROBY, GEARBY, THEMEBY, INTERVAL, LEDGERS,

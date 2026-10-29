@@ -171,12 +171,16 @@ Object.assign(App, {
       if (feed) { feed.className = 'feed soft'; feed.textContent = 'Not that letter. Look at the word above.'; }
     }
   },
-  // The quiz that follows: typed from memory (slots show how long it is). Right after copying it, so it
-  // lifts the word to box 1 but does not count as memory (see Engine.answer, fresh).
+  // The quiz that follows asks for it again, a different way each time (typed with slots, filling the gaps,
+  // or unscrambling). Right after copying it, so it lifts the word to box 1 but does not count as memory
+  // (see Engine.answer, fresh).
   startChallenge() {
-    const q = this.q; this.round.learned.add(q.w.i); q.learn = false;
-    q.fresh = true; q.kind = 'type'; q.scaf = true; q.typed = ''; q.locked = 0; q.diff = null; q.tries = 1;
+    const q = this.q, w = q.w; this.round.learned.add(w.i); q.learn = false;
+    const f = Engine.freshKind(w);
+    q.kind = f.kind; q.scaf = f.scaf; q.fresh = true; q.typed = ''; q.locked = 0; q.diff = null; q.tries = 1; q.teaching = false;
     q.hints = { def: 0, len: 0, letter: 0 };
+    if (q.kind === 'missing') { q.blanks = Engine.blanks(w); q.fill = {}; }
+    if (q.kind === 'scramble') { q.bank = Engine.scramble(w); q.built = []; }
     this.drawQ(true);
   },
   sayWord() { Voice.word(this.q.w.i); },
