@@ -1,0 +1,6 @@
+.DS_Store
+.work/
+build/
+**/__pycache__/
+*.pyc
+node_modules/

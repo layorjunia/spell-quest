@@ -1,0 +1,115 @@
+# World 3 — Echo Canyon. Grade 5: -tion/-sion, -ous, prefixes, silent letters. word | pos | meaning | sentence | tip | twins
+action | noun | something that is done | The movie had non-stop action from start to finish.
+sta[tion] | noun | a place where trains or buses stop | We waited at the station for the late train. | The sh sound at the end is spelled -tion.
+vaca[tion] | noun | time away from school or work | Our vacation starts the day after the last test.
+educa[tion] | noun | learning in school and from life | A good education opens a lot of doors.
+informa[tion] | noun | facts about something | The website has all the information you need.
+que[st]ion | noun | something you ask | Raise your hand if you have a question. | Question ends in -stion, with a ch sound hiding in the st.
+dire[c]tion | noun | the way something points or moves | We drove in the wrong direction for ten miles.
+colle[c]tion | noun | a group of things gathered together | My brother has a huge collection of trading cards.
+deci[sion] | noun | a choice you make | Choosing a team was a hard decision.
+divi[sion] | noun | splitting into equal groups | We learned long division in math today.
+inva[sion] | noun | entering a place by force | The movie is about an alien invasion.
+explo[sion] | noun | a sudden, loud blast | The explosion in the video game shook the screen.
+televi[sion] | noun | a screen that shows shows | We watched the big game on television.
+confu[sion] | noun | not understanding what is going on | There was confusion when the bell rang early.
+permis[sion] | noun | being allowed to do something | I asked for permission to borrow the camera.
+discus[sion] | noun | a talk about a topic | The class had a lively discussion about space.
+expre[ssion] | noun | a look on someone's face | The expression on his face was priceless.
+inven[tion] | noun | a new thing that someone makes up | The telephone was an amazing invention.
+atten[tion] | noun | careful listening or watching | Pay attention to the instructions.
+sec[tion] | noun | one part of something | The brass section of the band was loud.
+ele[c]tion | noun | a vote to choose a leader | Our class held an election for president.
+celebra[tion] | noun | a party for a special day | The celebration lasted until midnight.
+imagina[tion] | noun | the ability to picture new ideas | You need a big imagination to write fantasy.
+competi[tion] | noun | a contest | The robot competition was held in the gym.
+popula[tion] | noun | all the people living in a place | The population of our town is growing fast.
+pollu[tion] | noun | dirt or harm in air and water | Trash in the river causes pollution.
+solu[tion] | noun | the answer to a problem | We finally found a solution to the puzzle.
+situa[tion] | noun | what is happening at a certain time | It was a tricky situation, but we stayed calm.
+ser[ious] | adjective | important; not joking | This is a serious problem, so listen closely.
+cur[ious] | adjective | eager to learn or know | The curious kitten opened every cabinet.
+var[ious] | adjective | of several different kinds | The store sells various kinds of cheese.
+obv[ious] | adjective | easy to see or understand | The answer was obvious once I read it again.
+prev[ious] | adjective | coming before | In the previous level, I lost all my lives.
+courag[eous] | adjective | brave | The courageous firefighter ran back inside.
+gorg[eous] | adjective | extremely beautiful | We watched a gorgeous sunset from the cliff.
+outrag[eous] | adjective | shocking or very unusual | The magician wore an outrageous purple cape.
+trem[e]ndous | adjective | very large or powerful | The waterfall made a tremendous roar.
+gen[e]rous | adjective | happy to share | The generous neighbor gave us free tomatoes.
+ridic[ul]ous | adjective | very silly | His ridiculous hat made everyone laugh.
+humor[ous] | adjective | funny | We read a humorous story about a talking dog.
+vict[or]ious | adjective | having won | The victorious team lifted the trophy.
+happ[i]ness | noun | the feeling of being glad | Her face glowed with happiness.
+kindness | noun | being gentle and caring | A little kindness can change someone's day.
+darkness | noun | having no light | The cave was filled with total darkness.
+movement | noun | the act of changing place | I saw movement in the bushes.
+a[r]gu[m]ent | noun | a disagreement; a reason given | They had an argument about who was first. | Argument drops the e from argue: argu + ment.
+statement | noun | something said clearly | The coach read a short statement.
+agreement | noun | a deal that people accept | We shook hands to seal the agreement.
+treatment | noun | care given to a sick or hurt person | The doctor suggested a new treatment.
+equipment | noun | the tools needed for a task | We carried our climbing equipment up the trail.
+devel[o]pment | noun | growth or change over time | The development of the new park took two years.
+envir[on]ment | noun | the world around you | We must protect the environment. | There is "iron" hiding in environment.
+gover[n]ment | noun | the group that runs a country | The government built a new highway.
+ea[s]ily | adverb | without trouble | She easily beat the final boss.
+happ[i]ly | adverb | in a glad way | The kids splashed happily in the pool.
+heav[i]ly | adverb | with a lot of weight or force | Snow fell heavily all night long.
+luck[i]ly | adverb | by good fortune | Luckily, the rain stopped before the game.
+care[f]ul | adjective | paying close attention | Be careful with that glass. | The ful ending has only ONE l.
+thank[f]ul | adjective | feeling grateful | I am thankful for my friends.
+peace[f]ul | adjective | calm and quiet | The lake was peaceful at dawn.
+wonder[f]ul | adjective | amazing | We had a wonderful time at the fair.
+pow[er]ful | adjective | very strong | A powerful wind knocked over the tent.
+succ[e]ssful | adjective | having reached a goal | The experiment was successful.
+use[f]ul | adjective | helpful | A flashlight is a useful tool on a camping trip.
+unhappy | adjective | not glad | He was unhappy when his game froze.
+di[s]agree | verb | to have a different opinion | We disagree about the best pizza topping.
+di[s]appear | verb | to go out of sight | The magician made the coin disappear. | Dis + appear: one s, one p.
+di[s]a[pp]oint | verb | to let down | I don't want to disappoint my team.
+mi[ss]pell | verb | to spell wrong | Don't misspell your own name!
+mi[s]take | noun | an error | Everyone makes a mistake sometimes.
+i[mp]ossible | adjective | not able to happen | It seemed impossible to finish before dark.
+i[n]correct | adjective | wrong | The answer on the board was incorrect.
+i[n]visible | adjective | cannot be seen | The superhero had the power to become invisible.
+un[u]sual | adjective | not common | We saw an unusual bird on the lake.
+un[k]nown | adjective | not known | The explorers entered unknown territory.
+dou[b]t | noun | not being sure | I have no doubt that we will win. | The b in doubt is silent.
+de[b]t | noun | money that is owed | He paid off his debt in a year. | The b in debt is silent.
+autu[m]n | noun | the season after summer | The leaves turn orange in autumn. | The n at the end of autumn is silent.
+[k]nowledge | noun | what you know | Her knowledge of insects is amazing. | Silent k: kn- says n.
+inte[rr]upt | verb | to break into a talk | It is rude to interrupt when someone is speaking.
+embar[r]ass | verb | to make someone feel awkward | I hope this doesn't embarrass you. | Embarrass has two r's and two s's.
+o[cc]a[s]ion | noun | a special time or event | The wedding was a joyful occasion.
+rec[o]gnize | verb | to know from before | I didn't recognize you in that costume. | Say the g: rec-og-nize.
+sch[e]dule | noun | a plan showing when things happen | My soccer schedule is full this month.
+va[cuu]m | noun | a machine that sucks up dust | Please vacuum the living room. | Vacuum has two u's in a row.
+guar[an]tee | noun | a promise that something will happen | The store gave us a one-year guarantee.
+g[u]ard | noun | someone who protects | The guard stood by the castle gate.
+g[u]ide | noun | a person who shows the way | Our guide led us up the mountain trail.
+g[ui]lty | adjective | having done something wrong | The puppy looked guilty beside the torn pillow.
+g[ui]tar | noun | a stringed instrument | He played a song on his guitar.
+[ch]orus | noun | a group that sings together | The chorus sang the final song.
+[ch]aracter | noun | a person in a story | My favorite character in the book is the dragon.
+[sch]ool | noun | a place for learning | School starts at eight o'clock.
+[ch]emical | noun | a substance used in science | The scientist poured the chemical into a glass tube.
+tech[n]ology | noun | tools and machines made with science | New technology makes video calls easy.
+[ph]otograph | noun | a picture taken with a camera | I framed a photograph of the mountains.
+para[gr]aph | noun | a group of sentences about one idea | Write one paragraph about your trip.
+tele[ph]one | noun | a device for talking to people far away | The old telephone had a long cord.
+ele[ph]ant | noun | a huge gray animal with a trunk | The elephant sprayed water with its trunk.
+al[ph]abet | noun | all the letters in order | She can say the alphabet backward.
+[sc]issors | noun | a tool with two blades for cutting | Use scissors to cut the paper.
+[sc]ene | noun | a place where something happens; part of a movie | The funniest scene is at the end.
+[sc]ience | noun | the study of how the world works | Science is my favorite class.
+[sc]ent | noun | a smell | The scent of pine trees filled the cabin. | cent
+th[or]ough | adjective | complete; careful | The detective made a thorough search of the room.
+alth[ough] | conj. | even though | Although it was raining, we played outside.
+t[ou]gh | adjective | strong and hard to break | The steak was too tough to chew.
+r[ou]gh | adjective | not smooth | The road was rough and bumpy.
+c[ou]gh | verb | to push air out of your throat loudly | A cough can spread germs.
+b[ough]t | verb | got by paying money | She bought a new game with her savings.
+br[ough]t | verb | carried with you | I brought my skateboard to the park.
+f[ough]t | verb | battled | The two teams fought hard for the title.
+[ough]t | verb | should | You ought to wear sunscreen at the beach.
+bor[ough] | noun | a town or district | Each borough of the city has its own mayor.

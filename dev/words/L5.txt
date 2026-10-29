@@ -1,0 +1,107 @@
+# World 5 — Neon City. Grade 7: look-alike pairs, Latin and Greek roots, tech words. word | pos | meaning | sentence | tip | twins
+a[cc]ept | verb | to take what is offered | Please accept this award on behalf of the whole team. | Accept means to take in. | except
+e[xc]ept | prep. | other than; leaving out | Everyone was invited except the villain. | Except means to leave out. | accept
+a[ff]ect | verb | to change or influence | Too little sleep can affect your grades. | Affect is the action: a for action. | effect
+e[ff]ect | noun | the result of something | The special effect made the monster look real. | Effect is the end result: e for end. | affect
+princi[pa]l | noun | the head of a school | The principal announced a snow day. | The principal is your pal. | principle
+princi[ple] | noun | a basic rule or belief | Honesty is a principle I live by. | A principle is a rule: both end in -le. | principal
+station[a]ry | adjective | not moving | The bike stayed stationary on its stand. | Stationary with an a means standing still. | stationery
+station[e]ry | noun | paper and envelopes for writing letters | She wrote a note on fancy stationery. | Stationery with an e means envelopes. | stationary
+comp[le]ment | noun | something that completes or goes well with | Cheese is the perfect complement to crackers. | Complement has "complete" inside. | compliment
+comp[li]ment | noun | a kind thing you say | He gave me a nice compliment on my drawing. | I like a compliment: it has an i. | complement
+de[s]ert | noun | a dry, sandy region | The desert gets almost no rain. | Desert has one s, like sand. | dessert
+de[ss]ert | noun | a sweet treat after dinner | We shared a giant ice cream dessert. | Dessert has two s's, because you want seconds. | desert
+[c]ouncil | noun | a group that makes decisions | The town council voted to build a skate park. | counsel
+[c]ounsel | noun | advice | The wise old owl gave good counsel. | council
+lo[s]e | verb | to misplace, or to not win | Try not to lose your keys. | Lose has one o; loose has two. | loose
+lo[o]se | adjective | not tight | My tooth is loose. | lose
+capit[a]l | noun | the city where a government sits | Austin is the capital of Texas. | Capital with an a: the city. | capitol
+capit[o]l | noun | a building where lawmakers meet | We toured the capitol and saw its huge dome. | Capitol with an o: the dome. | capital
+aqu[a]rium | noun | a place where fish and sea animals are kept | The aquarium has a tunnel where sharks swim overhead.
+autom[o]bile | noun | a car | The first automobile had no roof.
+bi[o]graphy | noun | the story of someone's life | I wrote a biography of my favorite inventor.
+bi[o]logy | noun | the study of living things | In biology we dissected a flower.
+ge[o]graphy | noun | the study of the Earth and its places | Geography class begins with a giant map.
+ge[o]logy | noun | the study of rocks and the Earth | Geology explains how mountains grow.
+h[y]drogen | noun | the lightest gas | Water is made of hydrogen and oxygen.
+spec[t]ator | noun | a person who watches an event | A spectator caught the foul ball.
+str[u]cture | noun | something that is built | The tall structure swayed in the wind.
+con[s]truction | noun | the building of something | Construction on the new bridge begins in May.
+contra[d]ict | verb | to say the opposite of | Please don't contradict your teacher.
+pre[d]ict | verb | to say what will happen | I predict our team will win by ten.
+aud[i]ble | adjective | loud enough to hear | His whisper was barely audible.
+ther[m]ometer | noun | a tool that measures temperature | The thermometer read ninety degrees.
+dem[o]cracy | noun | a government where people vote | In a democracy, citizens choose their leaders.
+au[t]ograph | noun | a famous person's signature | I got the quarterback's autograph.
+sym[ph]ony | noun | a long piece of music for an orchestra | The symphony ended with a thunderous drum roll.
+syn[o]nym | noun | a word with the same meaning | The word huge is a synonym for enormous.
+ant[o]nym | noun | a word with the opposite meaning | The word cold is the antonym of hot.
+hemi[sp]here | noun | half of a globe | Australia is in the Southern Hemisphere.
+at[m]osphere | noun | the air around a planet | Earth's atmosphere protects us from the sun.
+transpo[r]tation | noun | ways of getting from place to place | Buses and trains are public transportation.
+trans[l]ate | verb | to change words into another language | Can you translate this sign into English?
+alg[o]rithm | noun | a step-by-step set of instructions for a computer | The game uses an algorithm to pick the next level.
+en[cr]yption | noun | scrambling data so only the right person can read it | Encryption keeps your messages private.
+av[a]tar | noun | a character that stands for you online | I designed a purple wizard as my avatar.
+c[ir]c[ui]t | noun | a loop that electricity flows around | The circuit lit up the tiny bulb.
+mag[n]etic | adjective | pulled by a magnet | The compass needle is magnetic.
+lab[o]ratory | noun | a room for science experiments | The laboratory smelled like chemicals.
+engin[ee]r | noun | a person who designs machines or buildings | The engineer drew plans for a bigger bridge.
+me[ch]anic | noun | a person who fixes machines | The mechanic changed the oil in ten minutes.
+sc[ie]ntist | noun | a person who studies the natural world | The scientist studied the volcano for years.
+tech[n]ician | noun | a person trained to fix equipment | A technician repaired the broken screen.
+ac[q]uire | verb | to get | Gamers acquire points by defeating enemies. | There's a silent-looking q hiding after the c: ac-quire.
+a[gg]ressive | adjective | ready to attack | The aggressive goose chased us across the yard.
+a[gr]iculture | noun | farming | Agriculture feeds the whole country.
+am[bu]lance | noun | a vehicle that rushes the sick to the hospital | The ambulance raced past with its siren on.
+c[a]mpaign | noun | a planned effort to win something | Her campaign for class president had funny posters.
+c[ir]cumstance | noun | a condition that affects what happens | Under no circumstance should you open that door.
+cem[e]tery | noun | a place where people are buried | The old cemetery was covered with moss. | Cemetery has e's all the way through; no a's.
+conse[qu]ence | noun | the result of an action | The consequence of skipping practice was sitting on the bench.
+crit[i]cize | verb | to point out what is wrong | It's easy to criticize, but harder to help.
+cur[r]iculum | noun | the courses taught at a school | Our school's curriculum includes coding.
+dis[c]ipline | noun | training that teaches self-control | It takes discipline to practice every day.
+dile[mm]a | noun | a hard choice | I faced a dilemma: pizza or tacos?
+el[i]gible | adjective | allowed to take part | You are eligible for the contest if you are under fourteen.
+enth[u]siasm | noun | great excitement | She cheered with enthusiasm.
+e[x]aggerate | verb | to make something sound bigger than it is | Don't exaggerate; the fish was not as long as a canoe.
+fa[sc]inate | verb | to hold someone's interest | Spiders fascinate me.
+funda[m]ental | adjective | basic and very important | Teamwork is fundamental to winning.
+[h]ygiene | noun | habits that keep you clean and healthy | Washing your hands is part of good hygiene.
+hy[p]ocrite | noun | someone who does the opposite of what they say | Don't be a hypocrite and break your own rule.
+imag[i]nary | adjective | not real; made up in the mind | She had an imaginary friend who was a purple robot.
+l[ei]sure | noun | free time | I read comics in my leisure time.
+min[i]ature | noun | a very small copy of something | He built a miniature of the stadium.
+nec[e]ssity | noun | something you must have | Water is a necessity for life.
+nu[i]sance | noun | something annoying | The buzzing fly was a nuisance.
+ob[s]tacle | noun | something in your way | We jumped over each obstacle on the course.
+o[ff]icial | adjective | approved by someone in charge | The official rules are posted on the wall.
+par[l]iament | noun | a group of people who make laws | The parliament voted on the new law.
+p[a]stime | noun | a hobby | Fishing is his favorite pastime. | Pastime is "pass" + "time" with one s.
+phy[s]ician | noun | a medical doctor | The physician checked my knee.
+poli[t]ician | noun | a person who works in government | The politician shook hands with every voter.
+pr[e]cious | adjective | worth a lot; loved | The gem was too precious to sell.
+pre[j]udice | noun | an unfair opinion formed without knowing | We should judge people fairly, without prejudice.
+pre[f]erred | adjective | liked better | Pepperoni is my preferred topping.
+pron[un]ciation | noun | the way a word is said | Check the pronunciation in the dictionary. | There is no "nounce" in pronunciation; it is pro-nun-ciation.
+rec[o]mmend | verb | to suggest as good | Can you recommend a good book?
+re[h]earse | verb | to practice before a show | The band will rehearse every Friday.
+res[e]rvoir | noun | a lake that stores water | The city's reservoir was nearly full.
+res[i]stance | noun | pushing back against something | The boat felt resistance from the current.
+[r]id[i]cule | noun | making fun of someone | He faced ridicule for his unusual hat.
+sa[cr]ifice | noun | giving up something for a goal | The team made a sacrifice to win the game.
+sc[e]nery | noun | views of nature | The scenery along the coast was breathtaking.
+sou[v]enir | noun | something you keep to remember a trip | I bought a keychain as a souvenir.
+su[ff]icient | adjective | enough | We had sufficient food for three days.
+sus[p]icious | adjective | feeling that something is wrong | The dog was suspicious of the stranger.
+tend[e]ncy | noun | a habit of acting a certain way | She has a tendency to be late.
+v[e]hicle | noun | something that carries people or things | The vehicle skidded on the ice.
+v[i]cious | adjective | cruel and fierce | A vicious storm ripped off the roof.
+v[i]gilant | adjective | watching carefully for danger | The lifeguard stayed vigilant all afternoon.
+with[h]old | verb | to hold back | I will withhold my answer until I'm sure. | Withhold is with + hold, so there are two h's.
+yi[e]ld | verb | to give way; to produce | Please yield to the car on your left.
+co[l]umn | noun | a tall pillar; a line of text | The ancient temple had a marble column. | The n at the end is silent.
+so[l]emn | adjective | serious and quiet | The room fell silent at the solemn ceremony. | The n at the end is silent.
+con[d]emn | verb | to say something is very wrong | Leaders condemn cheating in sports. | The n at the end is silent.
+rhi[n]oceros | noun | a huge animal with a horn on its nose | A rhinoceros charged across the grass. | Silent h: rh- says r.
+[ps]ychology | noun | the study of the mind | Psychology explains why we dream. | Silent p: ps- says s.

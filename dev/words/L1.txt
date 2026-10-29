@@ -1,0 +1,117 @@
+# World 1 — Rookie Camp. Everyday words, grade 2-3. word | pos | meaning | sentence | tip
+s[ai]d | verb | spoke; the past of "say" | Coach said the game starts at noon. | Said sounds like "sed" but hides an ai.
+fr[ie]nd | noun | a person you like and trust | My best friend beat me at chess again. | A friend is there until the END.
+be[cau]se | conj. | for the reason that | We stayed inside because it was pouring rain. | Big Elephants Can Always Understand Small Elephants.
+p[eo]ple | noun | human beings | Thousands of people cheered in the stadium. | People has an eo that you can't hear: p-eo-ple.
+w[ou]ld | verb | showing what could happen | I would play all day if I could. | O U Lucky Duck: would, could, should all share ould.
+c[ou]ld | verb | was able to | She could not believe how fast the car went. | O U Lucky Duck: would, could, should all share ould.
+sh[ou]ld | verb | ought to | You should wear a helmet when you ride. | O U Lucky Duck: would, could, should all share ould.
+ag[ai]n | adverb | one more time | Let's run the race again! | Again has an ai in the middle, just like said.
+a[l]ways | adverb | every single time | He always packs extra snacks for the trip. | Always has only ONE l in the middle.
+around | prep. | on every side of; in a circle | The dog ran around the yard three times.
+ans[w]er | noun | a reply to a question | I knew the answer, but my pencil broke. | The w in answer is silent, like a secret.
+l[augh] | verb | to make a happy sound at something funny | The joke made the whole class laugh. | augh says "aff" in laugh.
+en[ough] | adjective | as much as you need | We have enough pizza for everyone.
+thr[ough] | prep. | in one side and out the other | The train rushed through the tunnel.
+th[ough]t | verb | had an idea in your mind | I thought about the puzzle all night.
+b[u]sy | adjective | having a lot to do | The pizza shop is busy on Saturdays. | Busy hides a u that you never hear.
+b[ui]ld | verb | to make something by putting parts together | We will build a fort out of cardboard boxes.
+g[u]ess | verb | to answer without being sure | Can you guess what is inside the box?
+lis[t]en | verb | to pay attention to a sound | Please listen to the instructions first. | The t in listen is silent.
+cas[t]le | noun | a huge stone fort | The knight guarded the castle gate. | The t in castle is silent.
+clim[b] | verb | to go up using hands and feet | We climb the hill behind the school every morning. | The b in climb is silent.
+[k]nee | noun | the joint in the middle of your leg | I scraped my knee on the sidewalk. | Silent k: kn- says n.
+[k]nife | noun | a tool with a sharp blade | Use a safe knife to slice the apple. | Silent k: kn- says n.
+[k]nock | verb | to tap on a door | Please knock before you come in. | Silent k: kn- says n.
+[w]rite | verb | to put words on paper | I write in my journal every night. | Silent w: wr- says r.
+[w]rong | adjective | not correct | I took the wrong turn at the park. | Silent w: wr- says r.
+[w]rist | noun | the joint between your hand and arm | She wears a smart watch on her wrist. | Silent w: wr- says r.
+i[s]land | noun | land with water all around it | A tiny island sat in the middle of the lake. | The s in island is silent.
+whis[t]le | noun | a high sound made by blowing | The referee blew the whistle. | The t in whistle is silent.
+g[h]ost | noun | a spirit of someone who has died | The ghost in the video game wore a top hat. | Ghost has a sneaky h after the g.
+giant | adjective | very, very large | A giant wave rolled toward the shore.
+gira[ff]e | noun | a very tall African animal with a long neck | The giraffe stretched to reach the highest leaves.
+jungle | noun | a thick, hot forest | Monkeys swung through the jungle trees.
+kit[ch]en | noun | the room where food is made | Dad is baking cookies in the kitchen.
+ki[tt]en | noun | a baby cat | The kitten pounced on the toy mouse.
+li[tt]le | adjective | small | A little spark can start a big fire.
+ha[pp]en | verb | to take place | What will happen if we mix these two colors?
+ra[bb]it | noun | a small furry animal with long ears | A rabbit hopped across the garden.
+su[mm]er | noun | the hottest season | We swim in the lake every day in summer.
+di[nn]er | noun | the main meal of the day | Dinner is ready, so wash your hands!
+bu[tt]er | noun | a creamy spread made from milk | Spread some butter on the warm toast.
+pu[pp]y | noun | a baby dog | The puppy chewed my slipper in half.
+bu[bb]le | noun | a thin ball of soap and air | A giant bubble floated up and popped.
+bu[tt]on | noun | a small disk you press or fasten | Press the red button to start the game.
+ca[rr]y | verb | to hold and take somewhere | Can you carry my backpack up the stairs?
+so[rr]y | adjective | feeling sad about something you did | I am sorry I broke your pencil.
+le[ss]on | noun | something you are taught | Today's lesson is all about volcanoes.
+a[c]ro[ss] | prep. | from one side to the other | We swam across the pond to the dock. | Across has only one c.
+bri[dge] | noun | a road built over water | The bridge swayed in the wind.
+ju[dge] | noun | a person who decides who wins | The judge held up a perfect ten.
+e[dge] | noun | the outside line of something | Stay away from the edge of the cliff.
+wa[tch] | verb | to look at something carefully | Let's watch a movie tonight.
+ca[tch] | verb | to grab something that is thrown | Can you catch a fly ball with one hand?
+pic[ture] | noun | a drawing or photo | She drew a picture of a rocket.
+mount[ai]n | noun | a very high hill | We hiked up a snowy mountain.
+m[or]ning | noun | the early part of the day | I wake up early every morning.
+b[ea]ch | noun | sandy land beside the sea | Waves crashed onto the beach.
+rainbow | noun | colored arcs in the sky after rain | A rainbow stretched across the sky.
+light[n]ing | noun | a bright flash in a storm | Lightning flashed across the dark sky. | Lightning has no e: light-ning.
+sw[ea]ter | noun | a warm knitted top | Wear a warm sweater to the game.
+h[ea]vy | adjective | hard to lift | This backpack is heavy!
+h[ea]rt | noun | the muscle that pumps blood | My heart raced at the finish line.
+h[ea]lth | noun | how well your body is | Sleep is good for your health.
+[ea]rly | adverb | before the usual time | We left early to beat the traffic.
+[ea]rth | noun | the planet we live on | Earth spins around once every day.
+l[ea]rn | verb | to find out how to do something | Kids learn fast when it is fun.
+w[or]ld | noun | the planet and everything on it | A map shows the whole world.
+c[ou]ntry | noun | a land with its own government | Which country has the most mountains?
+c[ou]sin | noun | the child of your aunt or uncle | My cousin visits every summer.
+y[ou]ng | adjective | not old | The young eagle was learning to fly.
+tr[ou]ble | noun | a difficult or dangerous situation | We got into trouble for being too loud.
+t[ou]ch | verb | to put your hand on something | Do not touch the hot stove.
+mon[ey] | noun | coins and bills used to buy things | I am saving money for a new game.
+monk[ey] | noun | a clever animal that climbs trees | The monkey swung from branch to branch.
+hon[ey] | noun | the sweet food made by bees | Bees make honey from flower nectar.
+fam[i]ly | noun | parents, children and relatives | Family game night is every Friday.
+ev[e]ry | adjective | each one | Every player got a trophy.
+lib[r]ary | noun | a place where books are kept | The library has a whole shelf of comics. | Say it slowly: li-BRAR-y, with an r after the b.
+c[augh]t | verb | grabbed something moving | She caught the ball with one hand. | augh says "aw" in caught.
+t[augh]t | verb | showed someone how to do something | My uncle taught me how to fish. | augh says "aw" in taught.
+[eigh]t | noun | the number after seven | There are eight planets in our solar system.
+w[eigh] | verb | to find how heavy something is | How much does that suitcase weigh?
+str[aigh]t | adjective | not curved | Run straight to the gate and stop.
+skateboard | noun | a board with wheels you ride standing up | He landed a new trick on his skateboard.
+basketball | noun | a game played by shooting a ball through a hoop | Basketball practice starts at four.
+popcorn | noun | corn that puffs up when heated | We shared a giant bucket of popcorn at the movies.
+playground | noun | an outdoor place to play | The playground was empty after the rain.
+classroom | noun | a room where students learn | The classroom turtle is named Speedy.
+homework | noun | schoolwork done at home | I finished my homework before dinner.
+sunshine | noun | light from the sun | Warm sunshine poured through the window.
+outside | adverb | not in a building | Let's play outside until it gets dark.
+everyone | pronoun | every person | Everyone cheered when the lights came on.
+pi[zz]a | noun | a baked dish with cheese and toppings | We ordered a large pepperoni pizza.
+robot | noun | a machine that can do tasks by itself | Our robot can pick up a cup.
+video | noun | a recording you can watch | We made a video of our science project.
+ha[mm]er | noun | a tool for pounding nails | Dad used a hammer to fix the fence.
+la[dd]er | noun | steps you climb to reach high places | Hold the ladder steady while I climb.
+pock[et] | noun | a small bag sewn into clothes | I keep a lucky coin in my pocket.
+rock[et] | noun | a spacecraft shaped like a tube | The rocket blasted off at sunrise.
+pl[a]net | noun | a large round object that circles a star | Saturn is the planet with the rings.
+ma[g]ic | noun | tricks that seem impossible | The magician's magic trick fooled everyone.
+[c]ircus | noun | a show with clowns and acrobats | We saw an elephant at the circus.
+cam[e]ra | noun | a device for taking photos | I packed my camera for the trip.
+se[c]ret | noun | something kept hidden | Can you keep a secret?
+trea[s]ure | noun | gold, jewels or other riches | The pirates buried their treasure on the island.
+zi[pp]er | noun | a fastener with teeth that slide together | My zipper got stuck on my jacket.
+wiz[ar]d | noun | a person in stories who casts spells | The wizard waved his wand and the door opened.
+drag[o]n | noun | a fire-breathing monster in stories | The dragon curled up on a pile of gold.
+th[u]mb | noun | the short, thick finger | I hurt my thumb closing the door. | The b in thumb is silent.
+[wh]ale | noun | a huge sea animal | A blue whale is bigger than a bus.
+[wh]eel | noun | a round part that turns | The wheel on my bike is wobbly.
+shad[ow] | noun | a dark shape made when something blocks light | My shadow followed me down the street.
+blank[et] | noun | a soft cover for a bed | I wrapped myself in a warm blanket.
+dolph[in] | noun | a smart sea animal that can jump high | A dolphin leaped out of the water.
+[ph]oto | noun | a picture taken with a camera | I posted a photo of my cat.
+[ph]one | noun | a device used to call people | My phone has a cracked screen.
