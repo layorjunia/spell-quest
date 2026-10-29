@@ -127,7 +127,13 @@ const Engine = (() => {
     return [...set].sort((a, b) => a - b);
   }
 
-  // Per-letter feedback on a typed attempt: align it with the answer (longest common subsequence).
+  // Per-letter feedback on an attempt, in the three states Jacob defined (2026-10-29):
+  //   ok   green  — the right letter in the right place
+  //   near orange — the right letter in the right ORDER, but in the wrong place (shifted by an extra or
+  //                 missing letter: the e and n of "lisent" for "listen")
+  //   bad  red    — wrong place AND wrong order (a wrong, extra or out-of-order letter: the final t of "lisent")
+  //   gap         — a letter the word needs here and the attempt left out (shown as a blank to fill)
+  // "Right order" = it belongs to the longest run of letters the attempt shares with the answer, in sequence.
   function diff(attempt, answer) {
     const a = attempt, b = answer, n = a.length, m = b.length;
     const L = Array.from({ length: n + 1 }, () => new Array(m + 1).fill(0));
@@ -135,13 +141,23 @@ const Engine = (() => {
       L[i][j] = a[i] === b[j] ? L[i + 1][j + 1] + 1 : Math.max(L[i + 1][j], L[i][j + 1]);
     const out = []; let i = 0, j = 0;
     while (i < n && j < m) {
-      if (a[i] === b[j]) { out.push({ c: a[i], s: 'ok' }); i++; j++; }
+      if (a[i] === b[j]) { out.push({ c: a[i], s: i === j ? 'ok' : 'near' }); i++; j++; }
       else if (L[i + 1][j] >= L[i][j + 1]) { out.push({ c: a[i], s: 'bad' }); i++; }
       else { out.push({ c: '', s: 'gap' }); j++; }
     }
     while (i < n) { out.push({ c: a[i++], s: 'bad' }); }
     while (j < m) { out.push({ c: '', s: 'gap' }); j++; }
-    return out;
+    // A wrong letter standing where another belonged is ONE mistake, not a wrong letter plus a missing one:
+    // within a stretch of red letters and gaps, pair them off and keep just the red letter in place.
+    const res = []; let k = 0;
+    while (k < out.length) {
+      if (out[k].s === 'ok' || out[k].s === 'near') { res.push(out[k++]); continue; }
+      const run = []; while (k < out.length && (out[k].s === 'bad' || out[k].s === 'gap')) run.push(out[k++]);
+      let spare = Math.min(run.filter(x => x.s === 'bad').length, run.filter(x => x.s === 'gap').length);
+      for (const x of run.slice().reverse()) { if (x.s === 'gap' && spare > 0) { spare--; x.drop = true; } }
+      for (const x of run) if (!x.drop) res.push(x);
+    }
+    return res;
   }
   const same = (attempt, w) => String(attempt || '').trim().toLowerCase() === w.i;
 
@@ -289,7 +305,11 @@ const Engine = (() => {
     if (ev.ok) {
       r.r++; p.stats.right++; d.right++;
       const first = (ev.tries || 1) === 1;
-      if (first && typed && !hints.letter) {
+      if (ev.fresh) {
+        // typed straight after copying it off the learn card: it counts and lifts the word to box 1,
+        // but it is not memory yet, so no mastery-day credit
+        if (first && r.b < 1) r.b = 1;
+      } else if (first && typed && !hints.letter) {
         r.b = Math.min(5, r.b + 1);
         if (!r.d.includes(day)) { r.d.push(day); r.d = r.d.slice(-4); }
         p.stats.typed++;
@@ -306,6 +326,7 @@ const Engine = (() => {
       if (typed && clean && first) mult *= 1.2;
       if (hints.letter) mult *= .5; else if (hints.len) mult *= .8;
       if (!first) mult *= .5;
+      if (ev.fresh) mult *= .6;
       out.xp = Math.max(1, Math.round(BASE_XP[ev.kind] * mult)) + (first ? Math.min(10, combo - 1) : 0);
       out.coins = Math.round((typed ? 3 : 1) * (1 + .1 * (w.l - 1)) * (first ? 1 : .5));
       p.xp += out.xp; earn(p, 'coins', out.coins);

@@ -24,16 +24,31 @@ T('data is sound', () => {
   const rar = {}; ALLIES.forEach(a => rar[a.r] = (rar[a.r] || 0) + 1); eq(rar, { C: 12, R: 7, E: 3, L: 2 }, 'rarity counts');
 });
 
-T('diff and grading', () => {
-  eq(E.diff('necessary', 'necessary').map(x => x.s).join(''), 'ok'.repeat(9), 'exact');
-  const d = E.diff('neccessary', 'necessary'); ok(d.filter(x => x.s === 'bad').length === 1, 'one extra letter'); ok(d.filter(x => x.s === 'ok').length === 9, 'nine right');
-  const g = E.diff('definately', 'definitely'); ok(g.some(x => x.s === 'bad'), 'wrong a flagged');
-  const m = E.diff('seperate', 'separate'); ok(m.filter(x => x.s === 'bad').length === 1, 'seperate: one wrong letter');
-  const miss = E.diff('wierd', 'weird'); ok(miss.filter(x => x.s !== 'ok').length >= 1, 'transposition flagged');
-  const short = E.diff('nec', 'necessary'); eq(short.filter(x => x.s === 'gap').length, 6, 'short answer shows 6 gaps');
+T('diff: green right place, orange right order, red neither', () => {
+  const st = (x, y) => E.diff(x, y).map(d => d.s).join(',');
+  eq(st('lisent', 'listen'), 'ok,ok,ok,gap,near,near,bad', 'lisent vs listen: l i s green, a gap where t belongs, e n orange, last t red');
+  eq(st('necessary', 'necessary'), 'ok,ok,ok,ok,ok,ok,ok,ok,ok', 'exact is all green');
+  const d = E.diff('neccessary', 'necessary'); eq(d.filter(x => x.s === 'ok').length, 3, 'neccessary: n e c green'); eq(d.filter(x => x.s === 'bad').length, 1, 'one extra c red'); eq(d.filter(x => x.s === 'near').length, 6, 'the rest is the right order, shifted: orange');
+  eq(st('nec', 'necessary'), 'ok,ok,ok,gap,gap,gap,gap,gap,gap', 'a short answer shows the missing letters as gaps');
+  eq(st('listens', 'listen'), 'ok,ok,ok,ok,ok,ok,bad', 'an extra last letter is red');
+  const w = E.diff('wierd', 'weird'); ok(w.filter(x => x.s === 'bad').length === 1 && w.filter(x => x.s === 'gap').length === 1, 'wierd: one red, one gap, the rest right order');
+  eq(st('seperate', 'separate'), 'ok,ok,ok,bad,ok,ok,ok,ok', 'seperate: the wrong letter is just red in place, no extra tile');
+  eq(st('definately', 'definitely'), 'ok,ok,ok,ok,ok,bad,ok,ok,ok,ok', 'definately: one red a');
+  eq(st('xyz', 'abc'), 'bad,bad,bad', 'nothing shared: all red, same length');
+  eq(st('lisent', 'listen'), 'ok,ok,ok,gap,near,near,bad', 'lisent still shows its gap (the t is out of order, not swapped in place)');
   ok(E.same(' Friend ', E.BY.friend), 'trim+case'); ok(!E.same('frend', E.BY.friend), 'wrong');
 });
 
+T('a quiz right after the learn card is not memory', () => {
+  const p = mkp();
+  E.answer(p, { i: 'friend', kind: 'type', ok: true, tries: 1, fresh: true, combo: 1 }, at(0));
+  ok(p.words.friend.b === 1 && p.words.friend.d.length === 0, 'box 1, no mastery-day credit (b=' + p.words.friend.b + ', d=' + p.words.friend.d + ')');
+  E.answer(p, { i: 'friend', kind: 'type', ok: true, tries: 1, fresh: true, combo: 1 }, at(1));
+  ok(p.words.friend.b === 1, 'repeating the fresh quiz cannot climb');
+  const a = mkp(), b = mkp(); const x1 = E.answer(a, { i: 'knee', kind: 'type', ok: true, tries: 1, fresh: true, combo: 1 }, at(0)).xp, x2 = E.answer(b, { i: 'knee', kind: 'type', ok: true, tries: 1, combo: 1 }, at(0)).xp;
+  ok(x1 < x2, 'copy-and-quiz pays less than recall: ' + x1 + ' < ' + x2);
+  E.answer(p, { i: 'friend', kind: 'type', ok: true, tries: 1, combo: 1 }, at(2)); ok(p.words.friend.b === 2 && p.words.friend.d.length === 1, 'a later real typed answer counts');
+});
 T('question builders', () => {
   for (const w of WORDS) {
     const c = E.choices(w, rnd); ok(c.length === 4 && new Set(c).size === 4 && c.filter(x => x === w.i).length === 1, w.i + ' choices');

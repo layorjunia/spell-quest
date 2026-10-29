@@ -123,23 +123,62 @@ Object.assign(App, {
   },
 
   // ── the learn card for a brand-new word ─────────────────────────────────
+  // She reads it, hears it, and TYPES it once while it is still in front of her (it only accepts the
+  // right letter, so it cannot go wrong). The very next screen asks for it again, from memory.
   learnCard() {
-    const w = this.q.w, tip = this.trapTip(w);
+    const w = this.q.w, tip = this.trapTip(w), q = this.q;
+    q.copy = ''; q.copyDone = false;
     this.render(`<div class="screen">${this.header()}
-      <div class="qcard" id="qcard"><div class="qkind">New word</div>
+      <div class="qcard" id="qcard"><div class="qkind">New word · read it, then type it</div>
         ${this.wordTiles(w)}
         <div class="say"><button class="btn mint" onclick="App.sayWord()">${I('speaker')} Word</button><button class="btn blue" onclick="App.saySentence()">${I('speaker')} Sentence</button></div>
         <div class="def"><i>${esc(w.p)}</i> · ${esc(w.d)}</div>
         <div class="sent">${this.hiSentence(w)}</div>
         ${tip ? `<div class="tip">${I('hint')} ${esc(tip)}</div>` : ''}
         ${w.h ? `<div class="tip">Careful: it sounds like <b>${esc(w.h.join(', '))}</b>. Use the meaning to pick the right one.</div>` : ''}
-        <button class="btn go big" onclick="App.startChallenge()">Got it — quiz me</button>
-      </div></div>`, { play: true, view: 'play' });
+        <div id="area"></div>
+        <div class="feed" id="feed">Now type it to lock it in.</div>
+      </div>${this.keyboard('copy')}</div>`, { play: true, view: 'play' });
+    this.drawCopy();
     Sfx.play('flip', .4);
-    this.keyHandler = (k) => { if (k === 'enter') this.startChallenge(); };
+    this.keyHandler = (k) => this.learnKey(k);
     if (this.p.settings.autoplay) Voice.say([Voice.url('w', w.i), Voice.url('s', w.i)], 450);
   },
-  startChallenge() { this.round.learned.add(this.q.w.i); this.q.learn = false; this.drawQ(true); },
+  drawCopy() {
+    const q = this.q, w = q.w, area = $('area'); if (!area) return;
+    const tw = this.tw(w.i.length);
+    area.innerHTML = `<div class="tiles" style="--tw:${tw}px">${w.i.split('').map((c, i) => q.copy[i]
+      ? `<span class="tile ok">${q.copy[i]}</span>` : `<span class="tile blank ${i === q.copy.length ? 'cursor' : ''}">_</span>`).join('')}</div>`;
+  },
+  learnKey(k) {
+    const q = this.q; if (!q || !q.learn || q.copyDone) return;
+    const w = q.w;
+    if (k === 'enter') return;
+    if (k === 'del') { if (q.copy.length) { q.copy = q.copy.slice(0, -1); Sfx.play('del', .4); this.drawCopy(); } return; }
+    if (q.copy.length >= w.i.length) return;
+    const feed = $('feed');
+    if (k === w.i[q.copy.length]) {
+      q.copy += k; Sfx.play('key', .5); this.drawCopy();
+      if (feed) { feed.className = 'feed'; feed.textContent = 'Now type it to lock it in.'; }
+      if (q.copy.length === w.i.length) {
+        q.copyDone = true; Sfx.play('correct', .6);
+        if (feed) { feed.className = 'feed good'; feed.textContent = 'Locked in! Now the quiz.'; }
+        setTimeout(() => { if (this.q === q && q.learn) this.startChallenge(); }, 1000);
+      }
+    } else {                                       // copying: a wrong letter is simply not accepted
+      Sfx.play('retry', .4);
+      const card = $('qcard'); if (card) { card.classList.add('shake'); setTimeout(() => card.classList.remove('shake'), 450); }
+      if (feed) { feed.className = 'feed soft'; feed.textContent = 'Not that letter. Look at the word above.'; }
+    }
+  },
+  // The quiz that follows: typed from memory (slots show how long it is). Right after copying it, so it
+  // lifts the word to box 1 but does not count as memory (see Engine.answer, fresh).
+  startChallenge() {
+    const q = this.q; this.round.learned.add(q.w.i); q.learn = false;
+    q.fresh = true; q.kind = 'type'; q.scaf = true; q.typed = ''; q.locked = 0; q.diff = null; q.tries = 1;
+    q.hints = { def: 0, len: 0, letter: 0 };
+    this.drawQ(true);
+  },
   sayWord() { Voice.word(this.q.w.i); },
   saySentence() { Voice.sentence(this.q.w.i); },
 
@@ -168,12 +207,12 @@ Object.assign(App, {
     if (this.p.settings.autoplay) { Voice.word(w.i); }
     if (first) this.q._shown = Date.now();
   },
-  keyboard() {
+  keyboard(mode) {
     const key = (c) => `<button class="key" data-k="${c}" onpointerdown="App.keyDown(event,'${c}')">${c}</button>`;
     return `<div class="kb" id="kb">
       <div class="r">${ROWS[0].split('').map(key).join('')}</div>
       <div class="r">${ROWS[1].split('').map(key).join('')}</div>
-      <div class="r"><button class="key wide enter" onpointerdown="App.keyDown(event,'enter')">${this.round.mode === 'placement' || this.round.mode === 'speed' ? 'Go' : 'Check'}</button>${ROWS[2].split('').map(key).join('')}<button class="key wide del" onpointerdown="App.keyDown(event,'del')">⌫</button></div></div>`;
+      <div class="r">${mode === 'copy' ? `<button class="key wide enter" onpointerdown="event.preventDefault();App.sayWord()">Hear</button>` : `<button class="key wide enter" onpointerdown="App.keyDown(event,'enter')">${this.round.mode === 'placement' || this.round.mode === 'speed' ? 'Go' : 'Check'}</button>`}${ROWS[2].split('').map(key).join('')}<button class="key wide del" onpointerdown="App.keyDown(event,'del')">⌫</button></div></div>`;
   },
   keyDown(e, k) { e.preventDefault(); this.key(k); },
 
@@ -218,7 +257,9 @@ Object.assign(App, {
 
   // ── input ───────────────────────────────────────────────────────────────
   key(k) {
-    const q = this.q, r = this.round; if (!q || !r || q.settled || q.busy || q.learn) return;
+    const q = this.q, r = this.round; if (!q || !r) return;
+    if (q.learn) return this.learnKey(k);
+    if (q.settled || q.busy || q.teaching) return;
     const w = q.w;
     if (q.kind === 'type') {
       if (k === 'enter') return this.submitType();
@@ -238,41 +279,79 @@ Object.assign(App, {
   submitType() {
     const q = this.q; if (q.settled || !q.typed.length) return;
     if (Engine.same(q.typed, q.w)) return this.settle(true);
-    q.attempt = q.typed;
-    this.wrongTry(() => { q.diff = Engine.diff(q.typed, q.w.i); this.drawTiles(); });
+    this.wrongTry(q.typed);
   },
   submitMissing() {
     const q = this.q, w = q.w; if (q.settled) return;
-    const bad = {}; let ok = true;
-    for (const i of q.blanks) { if (q.fill[i] === w.i[i]) bad[i] = 'ok'; else { bad[i] = 'bad'; ok = false; } }
-    if (ok) return this.settle(true);
-    this.wrongTry(() => { q.diff = bad; this.drawArea(); setTimeout(() => { if (this.q === q && !q.settled) { for (const i of q.blanks) if (bad[i] === 'bad') delete q.fill[i]; q.diff = null; this.drawArea(); } }, 900); });
+    const att = this.attemptOf(q);
+    if (att === w.i) return this.settle(true);
+    this.wrongTry(att);
   },
   pickOpt(i) {
-    const q = this.q; if (q.settled || q.busy) return; const o = q.opts[i];
+    const q = this.q; if (q.settled || q.busy || q.teaching) return; const o = q.opts[i];
     if (o === q.w.i) return this.settle(true);
-    q.wrong.add(o); this.wrongTry(() => this.drawArea());
+    q.chosen = o; q.wrong.add(o); this.wrongTry(o);
   },
-  build(i) { const q = this.q; if (q.settled || q.busy || q.built.includes(i) || q.built.length >= q.bank.length) return; q.built.push(i); q.diff = null; Sfx.play('key', .5); this.drawArea(); if (q.built.length === q.bank.length) { q.busy = true; setTimeout(() => { q.busy = false; this.submitScramble(); }, 200); } },
-  unbuild(i) { const q = this.q; if (q.settled || q.busy) return; q.built.splice(i, q.built.length - i); q.diff = null; Sfx.play('del', .4); this.drawArea(); },
-  clearBuild() { const q = this.q; if (q.settled || q.busy) return; q.built = []; q.diff = null; Sfx.play('del', .4); this.drawArea(); },
+  build(i) { const q = this.q; if (q.settled || q.busy || q.teaching || q.built.includes(i) || q.built.length >= q.bank.length) return; q.built.push(i); q.diff = null; Sfx.play('key', .5); this.drawArea(); if (q.built.length === q.bank.length) { q.busy = true; setTimeout(() => { q.busy = false; this.submitScramble(); }, 200); } },
+  unbuild(i) { const q = this.q; if (q.settled || q.busy || q.teaching) return; q.built.splice(i, q.built.length - i); q.diff = null; Sfx.play('del', .4); this.drawArea(); },
+  clearBuild() { const q = this.q; if (q.settled || q.busy || q.teaching) return; q.built = []; q.diff = null; Sfx.play('del', .4); this.drawArea(); },
   submitScramble() {
     const q = this.q, w = q.w; if (q.settled) return;
-    const att = q.built.map(i => q.bank[i]).join('');
+    const att = this.attemptOf(q);
     if (att === w.i) return this.settle(true);
-    const d = Engine.diff(att, w.i); const st = []; let k = 0; for (const x of d) { if (x.s !== 'gap') st[k++] = x.s; }
-    this.wrongTry(() => { q.diff = st; this.drawArea(); setTimeout(() => { if (this.q === q && !q.settled) { q.built = []; q.diff = null; this.drawArea(); } }, 1100); });
+    this.wrongTry(att);
   },
 
-  // A wrong answer: speed and placement move on at once; everything else gets one more try.
-  wrongTry(show) {
+  // What she actually wrote, whatever kind of question it was.
+  attemptOf(q) {
+    const w = q.w;
+    if (q.kind === 'type') return q.typed;
+    if (q.kind === 'missing') return w.i.split('').map((c, i) => q.blanks.includes(i) ? (q.fill[i] || '') : c).join('');
+    if (q.kind === 'scramble') return q.built.map(i => q.bank[i]).join('');
+    return q.chosen || '';
+  },
+  // Her spelling above the right one, letter by letter, in green / orange / red (see Engine.diff). The tricky
+  // letters of the right spelling glow.
+  teachHtml(w, attempt) {
+    const d = Engine.diff(attempt, w.i), tw = this.tw(Math.max(w.i.length, d.length));
+    const mine = d.map(x => x.s === 'gap' ? '<span class="tile gap">_</span>' : `<span class="tile ${x.s}">${x.c}</span>`).join('');
+    const right = w.i.split('').map((c, i) => `<span class="tile ${this.inTrap(w, i) ? 'trap' : 'given'}">${c}</span>`).join('');
+    return `<div class="teach"><div class="trow"><span class="tlabel">You wrote</span><div class="tiles" style="--tw:${tw}px">${mine}</div></div>
+      <div class="trow"><span class="tlabel">Right spelling</span><div class="tiles" style="--tw:${this.tw(w.i.length)}px">${right}</div></div>
+      <div class="legend2"><span><i class="g"></i>right place</span><span><i class="o"></i>right order, wrong place</span><span><i class="r"></i>wrong place and order</span><span><i class="u"></i>missing letter</span></div></div>`;
+  },
+
+  // A wrong answer. Speed and placement move straight on; everything else TEACHES, and stays on screen
+  // until she taps Try again (a correction that vanishes teaches nothing).
+  wrongTry(attempt) {
     const q = this.q, r = this.round, card = $('qcard');
-    if (r.mode === 'speed' || r.mode === 'placement' || q.tries >= 2) { show && show(); return this.settle(false); }
-    q.tries = 2;
+    q.attempt = attempt;
+    if (r.mode === 'speed' || r.mode === 'placement' || q.tries >= 2) return this.settle(false);
+    q.tries = 2; q.teaching = true; q.busy = false;
     Sfx.play('wrong', .5);
     if (card) { card.classList.add('shake'); setTimeout(() => card.classList.remove('shake'), 450); }
-    const f = $('feed'); if (f) { f.className = 'feed soft'; f.textContent = 'Not quite. Look at the colors and try again!'; }
-    show && show();
+    const w = q.w, tip = this.trapTip(w);
+    const area = $('area'); if (area) area.innerHTML = this.teachHtml(w, attempt);
+    const f = $('feed'); if (f) { f.className = 'feed soft'; f.textContent = 'Not quite. Study the right spelling, then try again from memory.'; }
+    const tb = $('tipbox'); if (tb) tb.innerHTML = tip ? `<div class="tip">${I('hint')} ${esc(tip)}</div>` : '';
+    const kb = $('kb'); if (kb) kb.style.display = 'none';
+    const hb = $('hintbar'); if (hb) hb.style.display = 'none'; const hm = $('hintmenu'); if (hm) hm.innerHTML = '';
+    const a = $('after'); if (a) a.innerHTML = `<button class="btn go big" onclick="App.retry()">Try again</button>`;
+    this.keyHandler = (k) => { if (k === 'enter') this.retry(); };
+    Voice.word(w.i);
+  },
+  retry() {
+    const q = this.q; if (!q || !q.teaching || q.settled) return;
+    q.teaching = false; q.diff = null; q.busy = false;
+    if (q.kind === 'type') { q.typed = q.hints.letter ? q.w.i[0] : ''; q.locked = q.hints.letter ? 1 : 0; }
+    if (q.kind === 'missing') q.fill = {};
+    if (q.kind === 'scramble') q.built = [];
+    if (q.kind === 'pick') { q.opts = Engine.choices(q.w); q.wrong = new Set(); }
+    const a = $('after'); if (a) a.innerHTML = ''; const tb = $('tipbox'); if (tb) tb.innerHTML = '';
+    const f = $('feed'); if (f) { f.className = 'feed'; f.textContent = 'Last try. Spell it from memory.'; }
+    const kb = $('kb'); if (kb) kb.style.display = ''; const hb = $('hintbar'); if (hb) hb.style.display = '';
+    this.drawArea(); Sfx.play('tap', .5);
+    this.keyHandler = (q.kind === 'type' || q.kind === 'missing') ? (k) => this.key(k) : null;
   },
 
   // ── hints ───────────────────────────────────────────────────────────────
@@ -307,7 +386,7 @@ Object.assign(App, {
     const w = q.w, card = $('qcard'), pos = r.mode === 'speed' ? r.asked - 1 : (r.posOf[w.i] != null ? r.posOf[w.i] : r.i);
     q.settled = true; this.keyHandler = null; Voice.stop();
     const combo = ok ? r.combo + 1 : 0;
-    const out = Engine.answer(this.p, { i: w.i, kind: q.kind, ok, tries: q.tries, hints: q.hints, mode: r.mode, combo, final: true });
+    const out = Engine.answer(this.p, { i: w.i, kind: q.kind, ok, tries: q.tries, hints: q.hints, mode: r.mode, combo, final: true, fresh: !!q.fresh });
     this.save();
     r.combo = combo; r.bestCombo = Math.max(r.bestCombo, combo); r.xp += out.xp; r.coins += out.coins; r.events.push(...out.events);
     this.banners(out.events);
@@ -344,8 +423,9 @@ Object.assign(App, {
   },
   reveal(w, quick) {
     const area = $('area'), feed = $('feed'), tip = this.trapTip(w);
-    if (area) area.innerHTML = this.wordTiles(w);
-    if (feed) { feed.className = 'feed bad'; feed.textContent = quick ? w.i : 'It is spelled:'; }
+    const att = this.q && this.q.attempt;
+    if (area) area.innerHTML = (!quick && att) ? this.teachHtml(w, att) : this.wordTiles(w);
+    if (feed) { feed.className = 'feed bad'; feed.textContent = quick ? w.i : 'This one will come back soon. Look at it closely.'; }
     const tb = $('tipbox'); if (tb && tip && !quick) tb.innerHTML = `<div class="tip">${I('hint')} ${esc(tip)}</div>`;
     const sent = $('sent'); if (sent) sent.innerHTML = this.hiSentence(w);
     const hm = $('hintbar'); if (hm) hm.remove(); const hu = $('hintmenu'); if (hu) hu.innerHTML = '';

@@ -4,7 +4,7 @@
 // iOS Safari requests media with a Range header and refuses a plain 200 from a
 // service worker cache, so audio is answered with real 206 slices. It also refuses
 // OPAQUE responses, so we never hand an <audio> request straight to fetch().
-const CACHE = 'sq-20261029-1202-d391628';
+const CACHE = 'sq-20261029-1227-6448aca';
 const ASSETS = [
   '.', 'index.html', 'style.css', 'manifest.json', 'firebase-config.js', 'words.js', 'data.js', 'data-allies.js',
   'art.js', 'art-more.js', 'engine.js', 'store.js', 'sync.js', 'audio.js', 'app-core.js', 'app-home.js', 'app-play.js', 'app-meta.js',

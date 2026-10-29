@@ -403,3 +403,14 @@ a.link { color: var(--mint); font-weight: 800; }
 @media (min-width: 700px) and (min-height: 1000px) { .qcard { min-height: 430px; justify-content: center; } }
 
 @media (max-width: 460px) { .key.wide { font-size: .8rem; letter-spacing: -.01em; } .key { height: 50px; } }
+
+/* the teaching panel after a miss: what she wrote above the right spelling */
+.teach { display: flex; flex-direction: column; gap: 14px; width: 100%; align-items: center; }
+.trow { display: flex; flex-direction: column; gap: 6px; align-items: center; width: 100%; }
+.tlabel { font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; opacity: .75; }
+
+.tile.near { background: linear-gradient(180deg, #ffc46b, #ff9a3d); box-shadow: 0 4px 0 #b4600e, inset 0 2px 0 rgba(255,255,255,.35); color: #4a2300; }
+.legend2 { display: flex; flex-wrap: wrap; gap: 6px 14px; justify-content: center; font-size: .78rem; font-weight: 700; opacity: .92; max-width: 460px; }
+.legend2 span { display: inline-flex; align-items: center; gap: 6px; }
+.legend2 i { width: 15px; height: 15px; border-radius: 5px; display: inline-block; }
+.legend2 i.g { background: #3ee6a0; } .legend2 i.o { background: #ff9a3d; } .legend2 i.r { background: #ff4f6a; } .legend2 i.u { background: transparent; box-shadow: inset 0 -4px 0 #ff9a3d; }

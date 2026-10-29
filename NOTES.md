@@ -76,3 +76,13 @@ quests / ~40 achievements / Word Vault (mastered-word collection) / records.
   sw, audit all written. Headless QA flows pass: full round, boss win, crate, speed, placement,
   cloud (stubbed). Word clips switched to carrier-cut (see memory spell-quest.md) and re-rendered;
   Whisper check of the carriers (`verify_audio.py --kind c`) is the last gate before deploy.
+- 2026-10-29: SHIPPED to https://layorjunia.github.io/spell-quest/ (build 20261029-1202-d391628).
+  Audit clean; live round tested headless. Whisper checks are advisory (see memory spell-quest.md).
+  Not yet tried on a real iPad. Possible next: listen to a sample of clips by ear (wrist, raconteur,
+  zephyr, dachshund), real-device test of keyboard + audio, a parent progress view, more words.
+- 2026-10-29 (feedback round 1, Jacob): (1) a miss must TEACH and wait: the colored comparison + right
+  spelling + tip stay on screen until he taps "Try again" (nothing auto-clears). (2) Feedback colors are his
+  definition: green = right place, orange = right order but wrong place, red = wrong place AND wrong order,
+  gap = missing letter; "lisent" for "listen" -> l i s green, gap, e n orange, t red (the old LCS display called
+  e and n correct, which was misleading). (3) A new word is TYPED once on the learn card (only the right letter
+  is accepted) and again on the next screen from memory; that quiz is `fresh` and does not count toward mastery.
